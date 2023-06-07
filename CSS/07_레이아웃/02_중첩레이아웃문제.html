@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            .container1{
+                border:3px solid red;
+                width: 700px;
+                padding: 20px;
+                /* 해결책 2번 */
+                overflow: hidden;
+            }
+            .box{
+                width: 200px;
+                height: 100px;
+                border: 3px solid green;
+                background-color: yellowgreen;
+                border-radius: 20px;
+                float: left;
+            }
+            /* 해결책 1번 : vbox에 clear:both 를 걸어서 해제*/
+           /* .vbox{
+                clear: both;
+            }*/
+
+            /* 해결책 3 after를 이용한 빈 가상 선택자를 만들고
+            block형태로 화면에 출력하고, 생긴 가상태그에 clear:both 적용
+            .container1::after{
+                content: '';
+                display: block;
+                clear: both;
+            }*/
+        </style>
+    </head>
+    <body>
+        <div class="container1">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <!--<div class="vbox"></div><!--용도는 없으나 float 해제목적으로 선언-->
+        </div>
+    </body>
+</html>
